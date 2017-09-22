@@ -1,0 +1,44 @@
+{
+    "id": "org.freedesktop.Platform.Icontheme.Adwaita",
+    "branch": "1.0",
+    "runtime": "org.freedesktop.Sdk",
+    "build-extension": true,
+    "sdk": "org.freedesktop.Sdk",
+    "runtime-version": "1.6",
+    "separate-locales": false,
+    "appstream-compose": false,
+    "build-options" : {
+        "prefix": "/usr/share/runtime"
+    },
+    "modules": [
+        {
+            "name": "adwaita-icon-theme",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.26/adwaita-icon-theme-3.26.0.tar.xz",
+                    "sha256": "9cad85de19313f5885497aceab0acbb3f08c60fcd5fa5610aeafff37a1d12212"
+                },
+                {
+                    "type": "patch",
+                    "path": "dont-install-pkgconfig.patch"
+                }
+            ]
+        },
+        {
+            "name": "appdata",
+            "buildsystem": "simple",
+            "build-commands": [
+                "mkdir -p ${FLATPAK_DEST}/share/appdata",
+                "cp org.freedesktop.Platform.Icontheme.Adwaita.appdata.xml ${FLATPAK_DEST}/share/appdata",
+                "appstream-compose --basename=org.freedesktop.Platform.Icontheme.Adwaita --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Platform.Icontheme.Adwaita"
+            ],
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "org.freedesktop.Platform.Icontheme.Adwaita.appdata.xml"
+                }
+            ]
+        }
+    ]
+}
