@@ -4,7 +4,7 @@
     "runtime": "org.freedesktop.Sdk",
     "build-extension": true,
     "sdk": "org.freedesktop.Sdk",
-    "runtime-version": "1.6",
+    "runtime-version": "18.08",
     "separate-locales": false,
     "appstream-compose": false,
     "build-options" : {
@@ -13,15 +13,14 @@
     "modules": [
         {
             "name": "adwaita-icon-theme",
+            "cleanup": [
+                "*.pc"
+            ],
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.28/adwaita-icon-theme-3.28.0.tar.xz",
-                    "sha256": "7aae8c1dffd6772fd1a21a3d365a0ea28b7c3988bdbbeafbf8742cda68242150"
-                },
-                {
-                    "type": "patch",
-                    "path": "dont-install-pkgconfig.patch"
+                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.30/adwaita-icon-theme-3.30.1.tar.xz",
+                    "sha256": "6d752a2b1bc668483956d4485c39cad1642d9358e133ff689526e43674a4e1ce"
                 }
             ]
         },
