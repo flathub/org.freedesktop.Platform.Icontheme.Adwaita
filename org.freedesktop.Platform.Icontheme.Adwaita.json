@@ -19,8 +19,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.32/adwaita-icon-theme-3.32.0.tar.xz",
-                    "sha256": "698db6e407bb987baec736c6a30216dfc0317e3ca2403c7adf3a5aa46c193286"
+                    "url": "https://download.gnome.org/sources/adwaita-icon-theme/3.36/adwaita-icon-theme-3.36.1.tar.xz",
+                    "sha256": "e498518627044dfd7db7d79a5b3d437848caf1991ef4ef036a2d3a2ac2c1f14d"
                 },
                 {
                     "type": "patch",
@@ -29,17 +29,17 @@
             ]
         },
         {
-            "name": "appdata",
+            "name": "metainfo",
             "buildsystem": "simple",
             "build-commands": [
-                "mkdir -p ${FLATPAK_DEST}/share/appdata",
-                "cp org.freedesktop.Platform.Icontheme.Adwaita.appdata.xml ${FLATPAK_DEST}/share/appdata",
+                "mkdir -p ${FLATPAK_DEST}/share/metainfo",
+                "cp org.freedesktop.Platform.Icontheme.Adwaita.metainfo.xml ${FLATPAK_DEST}/share/metainfo",
                 "appstream-compose --basename=org.freedesktop.Platform.Icontheme.Adwaita --prefix=${FLATPAK_DEST} --origin=flatpak org.freedesktop.Platform.Icontheme.Adwaita"
             ],
             "sources": [
                 {
                     "type": "file",
-                    "path": "org.freedesktop.Platform.Icontheme.Adwaita.appdata.xml"
+                    "path": "org.freedesktop.Platform.Icontheme.Adwaita.metainfo.xml"
                 }
             ]
         }
